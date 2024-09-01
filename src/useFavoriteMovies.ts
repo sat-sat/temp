@@ -1,13 +1,18 @@
+import { useQueries } from "@tanstack/react-query";
 import { useAppStore } from "./store";
-import useGetFavoriteMovies from "./useGetFavoriteMovies";
-import { transformMovieEntry } from "./useQueryMovieById";
+import { fetchMovieById, transformMovieEntry } from "./useQueryMovieById";
 
 export default function useFavoriteMovies() {
   const favoriteMovieIds = useAppStore((store) =>
     Object.keys(store.favoritedMovieIds)
   );
 
-  const queries = useGetFavoriteMovies(favoriteMovieIds);
+  const queries = useQueries({
+    queries: favoriteMovieIds.map((imdbId) => ({
+      queryKey: ["movie", imdbId],
+      queryFn: () => fetchMovieById({ imdbId }),
+    })),
+  });
 
   return {
     movies: queries
