@@ -19,6 +19,7 @@ import {
 import { Dispatch, SetStateAction } from "react";
 import styles from "./MovieDetailModal.module.css";
 import { Movie, MovieDetail } from "./types";
+import useFavoriteMovie from "./useFavoriteMovie";
 import useQueryMovieById from "./useQueryMovieById";
 
 const LINEAR_GRADIENT = `linear-gradient(
@@ -31,6 +32,24 @@ interface MovieDetailModalProps {
   movieId: Movie["imdbID"];
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+function FavoriteButton({ movieId }: { movieId: Movie["imdbID"] }) {
+  const { isFavorite, toggleFavorite } = useFavoriteMovie(movieId || "");
+
+  return (
+    <Button
+      c={isFavorite ? "orange" : "white"}
+      color={isFavorite ? "orange" : "white"}
+      variant="outline"
+      leftSection={
+        <IconStarFilled style={{ width: rem(16), height: rem(16) }} />
+      }
+      onClick={toggleFavorite}
+    >
+      {isFavorite ? "Remove from" : "Add to"} favorites
+    </Button>
+  );
 }
 
 function ModalContent({ movie }: { movie: MovieDetail }) {
@@ -66,16 +85,7 @@ function ModalContent({ movie }: { movie: MovieDetail }) {
       </Stack>
       <Group mb="xl">
         <Button color="orange">Start watching</Button>
-        <Button
-          c="white"
-          color="white"
-          variant="outline"
-          leftSection={
-            <IconStarFilled style={{ width: rem(16), height: rem(16) }} />
-          }
-        >
-          Add to favorites
-        </Button>
+        <FavoriteButton movieId={movie.imdbID || ""} />
       </Group>
       <Stack gap={0}>
         {movie.actors && (

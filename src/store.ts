@@ -3,20 +3,24 @@ import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 
 type State = {
-  counter: number;
+  favoritedMovieIds: Record<string, boolean>;
 };
 
 type Actions = {
-  setCounter: (value: number) => void;
+  setMovieFavoriteStatus: (imdbId: string, isFavorite: boolean) => void;
 };
 
 export const useAppStore = create<State & Actions>()(
   persist(
     immer((set) => ({
-      counter: 0,
-      setCounter: (value: number) =>
+      favoritedMovieIds: {},
+      setMovieFavoriteStatus: (imdbId, isFavorite) =>
         set((state) => {
-          state.counter = value;
+          if (isFavorite) {
+            state.favoritedMovieIds[imdbId] = isFavorite;
+          } else {
+            delete state.favoritedMovieIds[imdbId];
+          }
         }),
     })),
     {
