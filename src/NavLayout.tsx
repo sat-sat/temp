@@ -6,15 +6,18 @@ import SearchInput from "./SearchInput";
 import Logo from "./logo.svg?react";
 
 function TabsList() {
+  const navigate = useNavigate();
+
   return (
     <Tabs
       color="white"
       variant="pills"
-      defaultValue="movies"
+      defaultValue="search"
       classNames={styles}
+      onChange={(value) => navigate(`/${value}`)}
     >
-      <Tabs.List defaultValue="movies">
-        <Tabs.Tab color="blue" value="movies">
+      <Tabs.List>
+        <Tabs.Tab color="blue" value="search">
           Movies
         </Tabs.Tab>
         <Tabs.Tab value="favorites">Favorites</Tabs.Tab>
