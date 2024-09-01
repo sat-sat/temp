@@ -1,11 +1,14 @@
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import SearchInput from "./SearchInput";
 import styles from "./SearchPage.module.css";
 import Logo from "./logo.svg?react";
 
 export default function SearchPage() {
+  const navigate = useNavigate();
+
   const onSearch = useCallback((value: string) => {
-    console.log("Search for:", value);
+    navigate("/movies", { state: { search: value } });
   }, []);
 
   return (
