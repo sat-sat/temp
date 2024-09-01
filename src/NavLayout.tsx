@@ -5,6 +5,24 @@ import styles from "./NavLayout.module.css";
 import SearchInput from "./SearchInput";
 import Logo from "./logo.svg?react";
 
+function TabsList() {
+  return (
+    <Tabs
+      color="white"
+      variant="pills"
+      defaultValue="movies"
+      classNames={styles}
+    >
+      <Tabs.List defaultValue="movies">
+        <Tabs.Tab color="blue" value="movies">
+          Movies
+        </Tabs.Tab>
+        <Tabs.Tab value="favorites">Favorites</Tabs.Tab>
+      </Tabs.List>
+    </Tabs>
+  );
+}
+
 export default function NavLayout() {
   const navigate = useNavigate();
 
@@ -17,19 +35,7 @@ export default function NavLayout() {
       <nav>
         <Logo />
         <div className={styles.navContentRight}>
-          <Tabs
-            color="white"
-            variant="pills"
-            defaultValue="movies"
-            classNames={styles}
-          >
-            <Tabs.List defaultValue="movies">
-              <Tabs.Tab color="blue" value="movies">
-                Movies
-              </Tabs.Tab>
-              <Tabs.Tab value="favorites">Favorites</Tabs.Tab>
-            </Tabs.List>
-          </Tabs>
+          <TabsList />
           <SearchInput onSearch={onSearch} />
         </div>
       </nav>
