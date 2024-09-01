@@ -20,6 +20,9 @@ export default function SearchInput({ onSearch }: SearchInputProps) {
       if (value.length) {
         onSearch(value);
       }
+
+      // Design shows input isn't cleared after search, but adding this because it feels more natural
+      setValue("");
     },
     [value]
   );
