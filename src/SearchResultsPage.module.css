@@ -1,0 +1,20 @@
+.root {
+  width: fit-content;
+  border-radius: var(--mantine-radius-md);
+  background: var(--color-grey-800);
+  padding: calc(var(--mantine-spacing-xs) / 2);
+  margin-top: calc(var(--mantine-spacing-md) * 1.5);
+}
+
+.control {
+  background: var(--color-grey-800);
+  color: white;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+
+  &[data-active] {
+    background: var(--color-grey-700);
+  }
+}

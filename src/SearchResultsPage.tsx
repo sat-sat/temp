@@ -1,9 +1,11 @@
-import { Alert, Loader, Title } from "@mantine/core";
+import { Alert, Group, Loader, Pagination, Title } from "@mantine/core";
 import { IconExclamationCircleFilled } from "@tabler/icons-react";
 import { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MovieCardGrid from "./MovieCardGrid";
+import styles from "./SearchResultsPage.module.css";
 import useQueryMoviesByTitle from "./useQueryMoviesByTitle";
+import { OMDB_API_RESULTS_PER_PAGE } from "./vars";
 
 export default function SearchResultsPage() {
   const [page, setPage] = useState(0);
@@ -43,25 +45,28 @@ export default function SearchResultsPage() {
           />
         </>
       )}
-      <span>Current Page: {page + 1}</span>
-      <button
-        onClick={() => setPage((old) => Math.max(old - 1, 0))}
-        disabled={page === 0}
-      >
-        Previous Page
-      </button>
-      <button
-        onClick={() => {
-          if (!isPlaceholderData && !data?.error) {
-            setPage((old) => old + 1);
-          }
-        }}
-        // Disable the Next Page button until we know a next page is available
-        disabled={isPlaceholderData || !!data?.error}
-      >
-        Next Page
-      </button>
-      {isFetching ? <span> Loading...</span> : null}
+      {data?.movies && (
+        <Pagination.Root
+          total={Math.floor(data?.totalResults! / OMDB_API_RESULTS_PER_PAGE)}
+          value={page}
+          onChange={setPage}
+          classNames={styles}
+          boundaries={2}
+        >
+          <Group gap={5} justify="center">
+            <Pagination.Previous disabled={page === 1} />
+            <Pagination.Items />
+            <Pagination.Next
+              disabled={
+                isPlaceholderData ||
+                !!data?.error ||
+                page * OMDB_API_RESULTS_PER_PAGE + data.movies.length >=
+                  data.totalResults
+              }
+            />
+          </Group>
+        </Pagination.Root>
+      )}
     </div>
   );
 }
