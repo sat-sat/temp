@@ -1,0 +1,13 @@
+.searchPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--search-page-margin-top);
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--mantine-spacing-md) * 1.5);
+}

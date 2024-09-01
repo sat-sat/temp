@@ -1,3 +1,13 @@
+import styles from "./SearchPage.module.css";
+import Logo from "./logo.svg?react";
+
 export default function SearchPage() {
-  return <div>Search Page</div>;
+  return (
+    <div className={styles.searchPage}>
+      <div className={styles.searchContainer}>
+        <Logo />
+        Search Box
+      </div>
+    </div>
+  );
 }
