@@ -1,9 +1,9 @@
 export interface Movie {
-  title: string;
-  year: string;
+  title?: string;
+  year?: string;
   imdbID: string;
-  type: string;
-  poster: string;
+  type?: string;
+  poster?: string;
 }
 
 export interface MovieDetail {
@@ -25,7 +25,7 @@ export interface MovieDetail {
   metascore?: string;
   imdbRating?: string;
   imdbVotes?: string;
-  imdbID?: string;
+  imdbID: string;
   type?: string;
   dvd?: string;
   boxOffice?: string;
@@ -40,11 +40,11 @@ export interface Rating {
 }
 
 export interface OmdbApiMovieEntry {
-  Title: string;
-  Year: string;
+  Title?: string;
+  Year?: string;
   imdbID: string;
-  Type: string;
-  Poster: string;
+  Type?: string;
+  Poster?: string;
 }
 
 export interface OmdbApiMovieDetailEntry {
@@ -66,7 +66,7 @@ export interface OmdbApiMovieDetailEntry {
   Metascore?: string;
   imdbRating?: string;
   imdbVotes?: string;
-  imdbID?: string;
+  imdbID: string;
   Type?: string;
   DVD?: string;
   BoxOffice?: string;

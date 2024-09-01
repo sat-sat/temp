@@ -1,9 +1,9 @@
+import { ComponentProps } from "react";
 import MovieCard from "./MovieCard";
 import styles from "./MovieCardGrid.module.css";
-import { Movie } from "./types";
 
 export interface MovieCardGridProps {
-  movies: Movie[];
+  movies: ComponentProps<typeof MovieCard>["movie"][];
 }
 
 export default function MovieCardGrid({ movies }: MovieCardGridProps) {

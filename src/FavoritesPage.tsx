@@ -5,7 +5,6 @@ import useFavoriteMovies from "./useFavoriteMovies";
 export default function FavoritesPage() {
   const { movies, isPending } = useFavoriteMovies();
 
-  console.log("FavoritesPage", { movies, isPending });
   return (
     <>
       <div>
