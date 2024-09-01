@@ -12,7 +12,7 @@ function TabsList() {
     <Tabs
       color="white"
       variant="pills"
-      defaultValue="search"
+      value={location.pathname === "/favorites" ? "favorites" : "search"}
       classNames={styles}
       onChange={(value) => navigate(`/${value}`)}
     >

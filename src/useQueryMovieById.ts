@@ -15,7 +15,9 @@ interface UseQueryMovieByIdResponse extends MovieDetail {
   error?: string;
 }
 
-const fetchMovieById = ({ imdbId }: Pick<UseQueryMovieByIdParams, "imdbId">) =>
+export const fetchMovieById = ({
+  imdbId,
+}: Pick<UseQueryMovieByIdParams, "imdbId">) =>
   fetch(`${OMDB_API_URL}/?i=${imdbId}&apiKey=${OMDB_API_KEY}`).then((res) =>
     res.json()
   );

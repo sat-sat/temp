@@ -1,5 +1,7 @@
 main {
-  margin: var(--mantine-spacing-xl);
+  padding: var(--mantine-spacing-xl);
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 nav {
