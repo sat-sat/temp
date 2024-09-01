@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
+import "./App.css";
 import FavoritesPage from "./FavoritesPage";
 import NavLayout from "./NavLayout";
 import PageNotFound from "./PageNotFound";

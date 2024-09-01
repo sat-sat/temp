@@ -1,0 +1,8 @@
+:root {
+  --peach-color-body: #252528;
+}
+
+/* For dark mode */
+:root[data-mantine-color-scheme="dark"] {
+  --mantine-color-body: var(--peach-color-body);
+}
