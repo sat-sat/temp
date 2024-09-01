@@ -1,10 +1,13 @@
 :root {
-  --peach-color-body: #252528;
   --search-page-margin-top: 20vh;
   --movie-card-width: 200px;
+  --color-grey-400: #a3a3a5;
+  --color-grey-800: #3e3e40;
+  --color-grey-700: #565659;
+  --color-grey-900: #252528;
 }
 
 /* For dark mode */
 :root[data-mantine-color-scheme="dark"] {
-  --mantine-color-body: var(--peach-color-body);
+  --mantine-color-body: var(--color-grey-900);
 }

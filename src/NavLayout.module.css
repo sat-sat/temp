@@ -16,7 +16,7 @@ nav {
   color: white;
 
   &[data-active] {
-    color: var(--peach-color-body);
+    color: var(--color-grey-900);
     background-color: white;
     font-weight: 700;
   }
