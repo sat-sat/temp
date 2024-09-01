@@ -1,9 +1,8 @@
-import { Alert, Loader } from "@mantine/core";
+import { Alert, Loader, Title } from "@mantine/core";
 import { IconExclamationCircleFilled } from "@tabler/icons-react";
 import { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
-import MovieCard from "./MovieCard";
-import styles from "./SearchResultsPage.module.css";
+import MovieCardGrid from "./MovieCardGrid";
 import useQueryMoviesByTitle from "./useQueryMoviesByTitle";
 
 export default function SearchResultsPage() {
@@ -34,15 +33,15 @@ export default function SearchResultsPage() {
           {error.message}
         </Alert>
       ) : (
-        <div className={styles.moviesGrid}>
-          {data.movies.map((movie) => (
-            <MovieCard
-              key={movie.imdbID}
-              movie={movie}
-              onClick={onMovieCardClick}
-            />
-          ))}
-        </div>
+        <>
+          <Title order={3} c="white" mb="md">
+            Search results for &ldquo;{search}&rdquo;
+          </Title>
+          <MovieCardGrid
+            movies={data?.movies || []}
+            onMovieCardClick={onMovieCardClick}
+          />
+        </>
       )}
       <span>Current Page: {page + 1}</span>
       <button
