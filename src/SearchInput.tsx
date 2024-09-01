@@ -1,6 +1,7 @@
 import { Input, rem } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
 import { useCallback, useState } from "react";
+import styles from "./SearchInput.module.css";
 
 export interface SearchInputProps {
   onSearch: (value: string) => void;
@@ -30,6 +31,7 @@ export default function SearchInput({ onSearch }: SearchInputProps) {
   return (
     <form name="search-form" onSubmit={onFormSubmit}>
       <Input
+        classNames={{ input: styles.searchInput }}
         placeholder="Search"
         leftSection={
           <IconSearch
