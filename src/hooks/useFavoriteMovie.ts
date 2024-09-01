@@ -1,5 +1,5 @@
-import { useAppStore } from "./store";
-import { Movie } from "./types";
+import { useAppStore } from "../store";
+import { Movie } from "../types";
 
 export default function useFavoriteMovie(imdbId: Movie["imdbID"]) {
   const isFavorite = useAppStore((store) =>

@@ -1,6 +1,6 @@
 import { Center, Loader, Title } from "@mantine/core";
+import useFavoriteMovies from "../hooks/useFavoriteMovies";
 import MovieCardGrid from "./MovieCardGrid";
-import useFavoriteMovies from "./useFavoriteMovies";
 
 export default function FavoritesPage() {
   const { movies, isPending } = useFavoriteMovies();

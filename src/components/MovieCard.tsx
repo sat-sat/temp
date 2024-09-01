@@ -1,8 +1,8 @@
 import { Image } from "@mantine/core";
 import { useState } from "react";
+import { Movie } from "../types";
 import styles from "./MovieCard.module.css";
 import MovieDetailModal from "./MovieDetailModal";
-import { Movie } from "./types";
 
 export interface MovieProps {
   movie: Pick<Movie, "imdbID" | "poster">;

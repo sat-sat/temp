@@ -7,13 +7,13 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
+import { theme } from "../theme";
 import "./App.css";
 import FavoritesPage from "./FavoritesPage";
 import NavLayout from "./NavLayout";
 import PageNotFound from "./PageNotFound";
 import SearchPage from "./SearchPage";
 import SearchResultsPage from "./SearchResultsPage";
-import { theme } from "./theme";
 
 const queryClient = new QueryClient();
 

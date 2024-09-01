@@ -4,8 +4,8 @@ import {
   MovieDetail,
   OmdbApiMovieDetailEntry,
   OmdbApiMovieSearchByIdResponse,
-} from "./types";
-import { OMDB_API_KEY, OMDB_API_URL } from "./vars";
+} from "../types";
+import { OMDB_API_KEY, OMDB_API_URL } from "../vars";
 
 export interface UseQueryMovieByIdParams {
   imdbId: Movie["imdbID"];

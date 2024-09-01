@@ -1,6 +1,6 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { Movie, OmdbApiMovieEntry, OmdbApiMovieSearchResponse } from "./types";
-import { OMDB_API_KEY, OMDB_API_URL } from "./vars";
+import { Movie, OmdbApiMovieEntry, OmdbApiMovieSearchResponse } from "../types";
+import { OMDB_API_KEY, OMDB_API_URL } from "../vars";
 
 export interface UseQueryMoviesByTitleParams {
   title: string;

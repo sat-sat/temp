@@ -17,10 +17,10 @@ import {
   IconStarFilled,
 } from "@tabler/icons-react";
 import { Dispatch, SetStateAction } from "react";
+import useFavoriteMovie from "../hooks/useFavoriteMovie";
+import useQueryMovieById from "../hooks/useQueryMovieById";
+import { Movie, MovieDetail } from "../types";
 import styles from "./MovieDetailModal.module.css";
-import { Movie, MovieDetail } from "./types";
-import useFavoriteMovie from "./useFavoriteMovie";
-import useQueryMovieById from "./useQueryMovieById";
 
 const LINEAR_GRADIENT = `linear-gradient(
     to bottom,

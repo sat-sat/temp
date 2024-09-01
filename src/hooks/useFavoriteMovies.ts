@@ -1,5 +1,5 @@
 import { useQueries } from "@tanstack/react-query";
-import { useAppStore } from "./store";
+import { useAppStore } from "../store";
 import { fetchMovieById, transformMovieEntry } from "./useQueryMovieById";
 
 export default function useFavoriteMovies() {

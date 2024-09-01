@@ -2,10 +2,10 @@ import { Alert, Center, Group, Loader, Pagination, Title } from "@mantine/core";
 import { IconExclamationCircleFilled } from "@tabler/icons-react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import useQueryMoviesByTitle from "../hooks/useQueryMoviesByTitle";
+import { OMDB_API_RESULTS_PER_PAGE } from "../vars";
 import MovieCardGrid from "./MovieCardGrid";
 import styles from "./SearchResultsPage.module.css";
-import useQueryMoviesByTitle from "./useQueryMoviesByTitle";
-import { OMDB_API_RESULTS_PER_PAGE } from "./vars";
 
 export default function SearchResultsPage() {
   const [page, setPage] = useState(0);
