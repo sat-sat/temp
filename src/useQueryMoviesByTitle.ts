@@ -36,7 +36,7 @@ export default function useQueryMoviesByTitle({
   page,
 }: UseQueryMoviesByTitleParams) {
   return useQuery<OmdbApiMovieSearchResponse, Error, UseQueryMoviesResponse>({
-    queryKey: ["movies", page],
+    queryKey: ["movies", { title, page }],
     queryFn: () => fetchMoviesByTitle({ title, page }),
     placeholderData: keepPreviousData,
     select: (data) => ({
