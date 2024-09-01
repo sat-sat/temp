@@ -125,7 +125,7 @@ export default function MovieDetailModal({
 
       <Modal.Content radius="lg">
         {isPending ? (
-          <Center>
+          <Center h="50vh">
             <Loader />
           </Center>
         ) : isError ? (
