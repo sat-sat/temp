@@ -1,0 +1,6 @@
+.movieCardImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2/3;
+  cursor: pointer;
+}

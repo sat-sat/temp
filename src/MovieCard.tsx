@@ -1,5 +1,6 @@
 import { Image } from "@mantine/core";
 import { useCallback } from "react";
+import styles from "./MovieCard.module.css";
 import { Movie } from "./types";
 
 export interface MovieProps {
@@ -13,6 +14,12 @@ export default function MovieCard({ onClick, movie }: MovieProps) {
   }, [onClick, movie.imdbID]);
 
   return (
-    <Image onClick={_onClick} fit="cover" radius="md" src={movie.poster} />
+    <Image
+      className={styles.movieCardImage}
+      onClick={_onClick}
+      fit="cover"
+      radius="md"
+      src={movie.poster}
+    />
   );
 }
