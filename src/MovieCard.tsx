@@ -20,6 +20,7 @@ export default function MovieCard({ onClick, movie }: MovieProps) {
       fit="cover"
       radius="md"
       src={movie.poster}
+      fallbackSrc="https://placehold.co/235x352?text=Movie+poster+is+not+available."
     />
   );
 }
