@@ -21,3 +21,8 @@ nav {
     font-weight: 700;
   }
 }
+
+article {
+  /* This gap feels too big but it matches the design */
+  margin-top: var(--search-page-margin-top);
+}

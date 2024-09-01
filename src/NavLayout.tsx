@@ -33,7 +33,9 @@ export default function NavLayout() {
           <SearchInput onSearch={onSearch} />
         </div>
       </nav>
-      <Outlet />
+      <article>
+        <Outlet />
+      </article>
     </main>
   );
 }
