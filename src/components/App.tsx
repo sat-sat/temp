@@ -1,4 +1,4 @@
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import { theme } from "../theme";
 import "./App.css";
 import FavoritesPage from "./FavoritesPage";
 import NavLayout from "./NavLayout";
@@ -16,6 +15,7 @@ import SearchPage from "./SearchPage";
 import SearchResultsPage from "./SearchResultsPage";
 
 const queryClient = new QueryClient();
+const theme = createTheme({});
 
 export default function App() {
   return (
