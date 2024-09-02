@@ -63,6 +63,10 @@ This is a React single page web app implementing the Peachflix design and user s
 
 ### Design Choices
 
+- Added a Fallback Image
+
+  - Added a quick fallback image for movie posters.
+
 - Content Top Margin
 
   - The Figma design shows the landing search page has a 200px-ish top margin and the search results and favorites page share this margin. I thought this is a lot of space but I kept it as `margin-top: 20vh`.
@@ -82,6 +86,8 @@ This is a React single page web app implementing the Peachflix design and user s
 
 ### With more time...
 
+- Handle "N/A"
+  - OMDB API returns "N/A" instead of null. I don't check for this so N/A is displayed. I would add a check to make sure fields aren't displayed if N/A is the value.
 - Testing
   - I'd add React Testing Library tests and maybe some Playwright end to end tests
 - Refactoring

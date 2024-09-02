@@ -90,13 +90,13 @@ function ModalContent({ movie }: { movie: MovieDetail }) {
       <Stack gap={0}>
         {movie.actors && (
           <Text c="white">
-            <strong>Cast:</strong>
+            <strong>Cast: </strong>
             {movie.actors}
           </Text>
         )}
         {movie.genre && (
           <Text c="white">
-            <strong>Genre:</strong>
+            <strong>Genre: </strong>
             {movie.genre}
           </Text>
         )}

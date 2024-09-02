@@ -24,6 +24,9 @@ export default function SearchResultsPage() {
       title: search,
       page,
     });
+  const shouldShowPagination =
+    data?.movies?.length && data.totalResults > OMDB_API_RESULTS_PER_PAGE;
+  const shouldShowNoResults = !data?.movies?.length && !isError && !isPending;
 
   useEffect(() => {
     setPage(0);
@@ -53,10 +56,8 @@ export default function SearchResultsPage() {
             <MovieCardGrid movies={data?.movies || []} />
           </>
         )}
-        {!data?.movies?.length && !isError && !isPending ? (
-          <Text>There are no search results.</Text>
-        ) : null}
-        {data?.movies?.length ? (
+        {shouldShowNoResults ? <Text>There are no search results.</Text> : null}
+        {shouldShowPagination ? (
           <Pagination.Root
             total={Math.floor(data?.totalResults! / OMDB_API_RESULTS_PER_PAGE)}
             value={page}
