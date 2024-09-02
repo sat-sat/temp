@@ -85,3 +85,5 @@ This is a React single page web app implementing the Peachflix design and user s
   - Some hook names are confusing (useFavoriteMovie vs. useFavoriteMovies vs. useGetFavoriteMovies). I'd rethink/rename these if I had more time.
 - Route Constants
   - It felt a little brittle to hardcode "/search" or "/favorites"
+- Layout Responsiveness
+- Better and more granular error handling and loading states
