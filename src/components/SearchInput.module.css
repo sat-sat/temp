@@ -1,4 +1,5 @@
-.searchInput {
+.searchInput:active,
+.searchInput:focus {
   background: black;
   color: var(-color-grey-400);
 }

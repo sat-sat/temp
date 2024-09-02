@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import Logo from "../logo.svg?react";
 import SearchInput from "./SearchInput";
 import styles from "./SearchPage.module.css";
-import Logo from "./logo.svg?react";
 
 export default function SearchPage() {
   const navigate = useNavigate();

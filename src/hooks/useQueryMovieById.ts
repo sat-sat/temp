@@ -70,5 +70,6 @@ export default function useQueryMovieById({ imdbId }: UseQueryMovieByIdParams) {
       error: data.Error,
       ...transformMovieEntry(data),
     }),
+    retry: false,
   });
 }

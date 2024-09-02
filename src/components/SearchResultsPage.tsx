@@ -1,6 +1,14 @@
-import { Alert, Center, Group, Loader, Pagination, Title } from "@mantine/core";
+import {
+  Alert,
+  Center,
+  Group,
+  Loader,
+  Pagination,
+  Text,
+  Title,
+} from "@mantine/core";
 import { IconExclamationCircleFilled } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import useQueryMoviesByTitle from "../hooks/useQueryMoviesByTitle";
 import { OMDB_API_RESULTS_PER_PAGE } from "../vars";
@@ -16,6 +24,10 @@ export default function SearchResultsPage() {
       title: search,
       page,
     });
+
+  useEffect(() => {
+    setPage(0);
+  }, [search]);
 
   return (
     <>
@@ -41,7 +53,10 @@ export default function SearchResultsPage() {
             <MovieCardGrid movies={data?.movies || []} />
           </>
         )}
-        {data?.movies && (
+        {!data?.movies?.length && !isError && !isPending ? (
+          <Text>There are no search results.</Text>
+        ) : null}
+        {data?.movies?.length ? (
           <Pagination.Root
             total={Math.floor(data?.totalResults! / OMDB_API_RESULTS_PER_PAGE)}
             value={page}
@@ -62,7 +77,7 @@ export default function SearchResultsPage() {
               />
             </Group>
           </Pagination.Root>
-        )}
+        ) : null}
       </div>
     </>
   );

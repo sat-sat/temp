@@ -1,9 +1,9 @@
 import { Tabs } from "@mantine/core";
 import { useCallback } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
+import Logo from "../logo.svg?react";
 import styles from "./NavLayout.module.css";
 import SearchInput from "./SearchInput";
-import Logo from "./logo.svg?react";
 
 function TabsList() {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function TabsList() {
     <Tabs
       color="white"
       variant="pills"
-      value={location.pathname === "/favorites" ? "favorites" : "search"}
+      value={location.pathname === "/favorites" ? "favorites" : ""}
       classNames={styles}
       onChange={(value) => navigate(`/${value}`)}
     >

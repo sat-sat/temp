@@ -44,5 +44,6 @@ export default function useQueryMoviesByTitle({
       movies: (data.Search || []).map(transformMovieEntry),
       totalResults: parseInt(data.totalResults) || 0,
     }),
+    retry: false,
   });
 }
