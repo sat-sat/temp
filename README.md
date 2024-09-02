@@ -20,7 +20,7 @@ This is a React single page web app implementing the Peachflix design and user s
 
 - Full Tech Stack
   - TypeScript, React, Vite, React Query, Zustand, Mantine UI, React Router
-  - I created a public web app template to get started on this at github.com/jasonpang/web-app-template
+  - I created a [public web app template](https://github.com/jasonpang/web-app-template) to get started on this (if you see the generated from message on GitHub).
 
 ### Technical Choices
 
