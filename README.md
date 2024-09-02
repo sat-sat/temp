@@ -87,3 +87,4 @@ This is a React single page web app implementing the Peachflix design and user s
   - It felt a little brittle to hardcode "/search" or "/favorites"
 - Layout Responsiveness
 - Better and more granular error handling and loading states
+- Click logo to go home
