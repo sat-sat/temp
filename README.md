@@ -88,6 +88,8 @@ This is a React single page web app implementing the Peachflix design and user s
 
 - Handle "N/A"
   - OMDB API returns "N/A" instead of null. I don't check for this so N/A is displayed. I would add a check to make sure fields aren't displayed if N/A is the value.
+- Display title if movie poster is not available
+  - User can't tell what movie they're clicking into if the movie poster isn't available. Perhaps we can display the title.
 - Testing
   - I'd add React Testing Library tests and maybe some Playwright end to end tests
 - Refactoring
