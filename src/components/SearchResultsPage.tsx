@@ -60,7 +60,7 @@ export default function SearchResultsPage() {
         {shouldShowPagination ? (
           <Pagination.Root
             total={Math.floor(data?.totalResults! / OMDB_API_RESULTS_PER_PAGE)}
-            value={page}
+            value={page === 0 ? 1 : page}
             onChange={setPage}
             classNames={styles}
             boundaries={2}
