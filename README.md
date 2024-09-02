@@ -11,6 +11,11 @@ Click the link in the console to open the webpage.
 
 ### Overview
 
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-3.png)
+![alt text](image-2.png)
+
 This is a React single page web app implementing the Peachflix design and user stories.
 
 - Full Tech Stack
